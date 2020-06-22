@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkSmart</title>
+    <link href="trabalhoPG2.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="header">
+        <a href="trabalho.html"><img src="imgs/ThinkSmartL2.png" alt="logotrabalho"></a>
+        <div class="input-container">
+            <i class="fa fa-search"></i>
+            <input class="input-field" type="text" placeholder="Search..." name="usrnm">
+        </div>
+        </pesquisa>
+        <nav>
+            <ul class="top">
+                <p class="logged-in">Olá <span class="logged-in" id="nomeUsuario"></span>, seja bem-vindo!</p>
+                <a class="logged-in" id="btn_logout">
+                    <li>Efetuar Logout</li>
+                </a>
+                <a class="logged-out" href="login.html">
+                    <li>Login/Criar Conta</li>
+                </a>
+                <a href="#">
+                    <li>Quem somos</li>
+                </a>
+                <a href="#">
+                    <li>Contatos</li>
+                </a>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="tudo">
+        <div class="container">
+            <div id="full-post">
+                
+            </div>
+                
+            
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-1" id="princ"><br></div>
+                <div class="col-8" id="princ"></div>
+                <div class="col-1" id="princ"></div>
+            </div>
+
+        </div>
+    </div>
+                
+            
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-1" id="princ"></div>
+                <div class="col-8" id="princ"></div>
+                <div class="col-1" id="princ"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer class="pezin">
+
+        <p>
+            Nos siga em:<br>
+
+
+        </p>
+        Copyright 2020 - Todos os direitos reservados
+
+        <a> ThinkSmart</a>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+</body>
+<script src="login.js"></script>
+<script>
+    let post = JSON.parse(localStorage.getItem('postTo'));
+    console.log(post);
+    
+    if (!usuarioCorrente.login) {
+            $(".logged-in").hide();
+        }
+    else{
+        $(".logged-out").hide();
+    }
+
+    function initPage() {
+
+    // Associa a função de logout ao botão
+    document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+    // Informa o nome do usuário logado
+    document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+    }
+
+    function loadPage() {
+        let db_posts = JSON.parse(localStorage.getItem('db_posts'));
+        let postContent = document.getElementById('full-post');
+        let texto = `
+        <div class="row">
+                    <div class="col-1">
+                        <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown"
+                            id="Menu">
+
+                            <button type="button" class="btn btn-secondary" id="butaum">Trend</button>
+                            <button type="button" class="btn btn-secondary" id="butaum">Tech</button>
+                            <button type="button" class="btn btn-secondary" id="butaum">Utility</button>
+                            <button type="button" class="btn btn-secondary" id="butaum">Eco</button>
+
+                        </div>
+                    </div>
+                    <div class="col-1" id="princ"></div>
+
+                    <div class="col-8" id="princ">
+                        <img src="https://source.unsplash.com/random/1280x720" alt="">
+                    </div>
+                    <div class="col-1" id="princ"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-1" id="princ">
+
+                    </div>
+                    <div class="col-8" id="princ">
+
+                        <h1>${post.title}<br>
+                            <id class="SubH1">By <a href="#">${post.author}</a> - ${post.time}- <a href="#">${post.company}</a> - <a href="#">${post.tag}</a></id>
+                        </h1>
+                    </div>
+                    <div class="col-1" id="princ"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-1" id="princ"></div>
+                    <div class="col-8" id="princ">
+                        <p>
+                            ${post.text}
+                        </p>
+                    </div>
+                    <div class="col-1" id="princ"></div>
+                </div>
+        `
+        postContent.innerHTML=texto;
+    }
+
+    loadPage();
+
+    // Associa ao evento de carga da página a função para verificar se o usuário está logado
+    window.addEventListener('load', initPage);
+
+
+
+
+</script>
+
+</html>

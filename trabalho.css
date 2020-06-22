@@ -1,0 +1,248 @@
+html {
+  height: 100%;
+}
+
+* {
+  background-color: #4c96d7;
+  margin: 0px;
+  word-wrap: break-word;
+}
+.header {
+  background-color: white;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+.header a,
+.header nav,
+.header img,
+.header ul,
+.header .search,
+.header .input-container {
+  background-color: white;
+}
+.header .input-container {
+  text-align: center;
+  border: 2px solid;
+  border-color: #4c96d7;
+  border-radius: 10px;
+  padding: 5px;
+
+  display: flex;
+  width: 40%;
+  max-width: 40%;
+}
+.header .input-field {
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  padding-left: 5px;
+}
+.header i {
+  background-color: white;
+  padding-left: 2px;
+  padding: 1px;
+  display: block;
+  margin: auto;
+}
+
+.header img {
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
+  max-width: 75%;
+  padding-left: 10px;
+
+  display: block;
+}
+.header a {
+  text-decoration: none;
+}
+.header a {
+  color: black;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: #4c96d7;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header ul {
+  align-items: center;
+  padding-right: 10px;
+}
+.header ul li {
+  display: inline;
+  list-style: none;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  border-color: #4c96d7;
+}
+body {
+  min-height: 100%;
+}
+#Menu {
+  float: right;
+  margin-left: 0px;
+  background-color: white;
+  border-radius: 10px;
+}
+#PostBtnGrp {
+  float: left;
+  margin-left: 0px;
+  background-color: white;
+  border-radius: 10px;
+}
+#butaum {
+  background-color: white;
+  color: #4c96d7;
+  border: 1px solid white;
+  font-weight: bolder;
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+#butaum:hover {
+  background-color: rgb(216, 215, 215);
+  border: 1px solid rgb(216, 215, 215);
+}
+#butaumPost {
+  background-color: white;
+  color: #4c96d7;
+  border: 1px solid white;
+  font-weight: bolder;
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+#butaumPost:hover {
+  background-color: rgb(216, 215, 215);
+  border: 1px solid rgb(216, 215, 215);
+}
+
+.row {
+  padding: 20px;
+}
+
+#user-posts a{
+    word-wrap: break-word;
+}
+
+.desc {
+  background-color: white;
+  padding: 20px;
+}
+.col-8 h1,
+.col-8 p {
+  background-color: white;
+  text-align: justify;
+}
+.new-text{
+    word-wrap: break-word ;
+}
+.col-8 p {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.col-8 a {
+  text-decoration: none;
+  color: black;
+}
+.col-8 a:hover {
+  text-decoration: none;
+  color: #4c96d7;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.col-8 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.col-8 h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.col-8 .SubH1 {
+  text-align: center;
+  font-weight: normal;
+  background-color: white;
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.logged-in {
+  background-color: white;
+}
+
+.pezin {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+}
+.pezin p,
+.pezin,
+.pezin a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.pezin a {
+  font-style: italic;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+.pezin p {
+  padding: 5px;
+  font-size: 0.5rem;
+}
+
+/*$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px
+);
+
+$container-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 960px
+);*/
+
+@media only screen and (max-width: 1200px) {
+  .header .input-container {
+    display: none;
+  }
+  .menuBtn {
+    display: none;
+  }
+
+  [class*="col-"] {
+    width: 100%;
+  }
+}

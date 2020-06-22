@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkSmart</title>
+    <link href="login.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        * {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .ALL{
+    background-color: #ccc;
+  }
+
+
+  .formPost{padding: 20px;}
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  #greet{
+      padding:20px;
+  }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="trabalho.html"><img src="imgs/ThinkSmartL2.png" alt="logotrabalho"></a>
+    </header>
+
+    <div class="tudo">
+        <div class="container">
+
+            <div class="row ALLROW">
+                <div class="col-1">
+
+                    <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown"
+                        id="Menu">
+
+                        <button type="button" class="btn btn-secondary" id="butaum">Home</button>
+                        <!-- botao de home que pode ser utilizado para direcionar o usuario a pagina principal com o js-->
+
+
+                    </div>
+                </div>
+                <div class="col-1" id="princ"></div>
+
+                <div class="col-8" id="princ">
+
+                    <h3 id="greet"></h3>
+
+                    <div class="container fullForm">
+                        <form id="formPost" autocomplete="off">
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="title-post">Título do Post:</label>
+                          </div>
+                          <div class="col-75">
+                            <input required  type="text" id="titlePost" name="title-post" placeholder="Digite um titulo..." maxlength="40">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="company-post">Empresa:</label>
+                          </div>
+                          <div class="col-75">
+                            <input required type="text" id="companyPost" name="company-post" placeholder="Digite o nome da sua empresa..." maxlength="30">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="tag-post">Tag:</label>
+                          </div>
+                          <div class="col-75">
+                            <select required id="tagPost" name="tag-post">
+                              <option value></option>
+                              <option value="Trend">Trend</option>
+                              <option value="Tech">Tech</option>
+                              <option value="Utility">Utility</option>
+                              <option value="ECO">ECO</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="subject">Post:</label>
+                          </div>
+                          <div class="col-75">
+                            <textarea required id="postText" name="post-text" placeholder="Digite algo..." style="height:200px"></textarea>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <input id="btnPost" type="submit" value="submit">
+                        </div>
+                        </form>
+                      </div>
+                </div>
+                <div class="col-1" id="col-1bgw"></div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="pezin">
+        <p>
+            Nos siga em:<br>
+        </p>
+        Copyright 2020 - Todos os direitos reservados
+        <a> ThinkSmart</a>
+    </footer>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+    <script src="create-post.js"></script>
+    <script>
+    
+    $("#butaum").click(function() {
+            window.location.href = 'trabalho.html';
+        });
+        
+    </script>
+
+</body>
+</html>

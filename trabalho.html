@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkSmart</title>
+    <link href="trabalho.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="trabalho.html"><img src="imgs/ThinkSmartL2.png" alt="logotrabalho"></a>
+        <div class="input-container">
+            <i class="fa fa-search"></i>
+            <input class="input-field" type="text" placeholder="Search..." name="usrnm">
+        </div>
+        </pesquisa>
+
+
+
+        <nav>
+            <ul class="top">
+                <p class="logged-in">Olá <span class="logged-in" id="nomeUsuario"></span>, seja bem-vindo!</p>
+                <a class="logged-in" id="btn_logout">
+                    <li>Efetuar Logout</li>
+                </a>
+                <a class="logged-out" href="login.html">
+                    <li>Login/Criar Conta</li>
+                </a>
+                <a href="#">
+                    <li>Anunciar</li>
+                </a>
+                <a href="#">
+                    <li>Quem somos</li>
+                </a>
+
+            </ul>
+        </nav>
+
+
+    </header>
+    <div class="tudo">
+        <div class="container ALL">
+            <div class="row">
+                <div class="col-2 menuBtn">
+                    <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown"
+                        id="Menu">
+
+                        <button type="button" class="btn btn-secondary" id="butaum">Trend</button>
+                        <button type="button" class="btn btn-secondary" id="butaum">Tech</button>
+                        <button type="button" class="btn btn-secondary" id="butaum">Utility</button>
+                        <button type="button" class="btn btn-secondary" id="butaum">Eco</button>
+
+                    </div>   
+                </div>
+                <div class="col-8">
+                    <div id="user-posts">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="trabalhoPG2.html" ><img src="imgs/TrabalhoB3.jpg" alt="tt"></a>
+                            <div class="desc">
+                                <h1><a href="trabalhoPG2.html">Transformando lixo em qualidade</a><br>
+                                    <id class="SubH1">By livingasean - October 4, 2019 - <a href="#">ECO</a></id>
+                                </h1>
+        
+                                <p>Quem teria pensado nisso! Garrafas e frascos de plástico descartados podem se transformar em
+                                    fofas caixas de guardanapo em forma de baleia. Sem mencionar bandejas de secagem de
+                                    vidro que economizam água para a cozinha. Muitas idéias fantásticas para decoração de casa
+                                    moderna e acessórios para garantir que tudo esteja organizado e no lugar!</p>
+                            </div>
+        
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#"><img src="imgs/TrabalhoB2.jpg" alt="tt"></a>
+                            <div class="desc">
+                                <h1><a href="#">Quando se precisa de uma luz na comemoração</a><br>
+                                    <id class="SubH1">By sonos - October 8, 2019 - <a href="#">UTILITY</a></id>
+                                </h1>
+        
+                                <p>É melhor prevenir do que remediar, diz o ditado, e quando você menos esperar vai chegar a sua hora
+                                    de brilhar! O Multi abridor sonos promete não te deixar na mão, armado com uma luz de led ele vai permitir
+                                    total controle da situação quando necessário.
+                                </p>
+                                </div>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#"><img src="imgs/TrabalhoB1.jpg" alt="tt"></a>
+                            <div class="desc">
+                                <h1><a href="#">Praticidade um estilo de vida</a><br>
+                                    <id class="SubH1">By JubileuCO. - October 2, 2019 - <a href="#">UTILITY</a></id>
+                                </h1>
+        
+                                <p>É melhor prevenir do que remediar, diz o ditado, e quando você menos esperar vai chegar a sua hora
+                                    de brilhar! O Multi abridor sonos promete não te deixar na mão, armado com uma luz de led ele vai permitir
+                                    total controle da situação quando necessário.
+                                </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 colBtn">
+                    <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown"
+                        id="PostBtnGrp">
+
+                        <button type="button" class="btn btn-secondary" id="butaumPost">Criar Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer class="pezin">
+
+        <p>
+            Nos siga em:<br>
+
+
+        </p>
+        Copyright 2020 - Todos os direitos reservados
+
+        <a> ThinkSmart</a>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+</body>
+<script src="login.js"></script>
+<script>
+    if (!usuarioCorrente.login) {
+            $(".logged-in").hide();
+        }
+    else{
+            $(".logged-out").hide();
+    }
+
+    function initPage() {
+
+    // Associa a função de logout ao botão
+    document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+    // Informa o nome do usuário logado
+    document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+    }
+
+    
+
+    function loadPosts(){
+
+        let db_posts = JSON.parse(localStorage.getItem('db_posts'));
+        let postSpace = document.getElementById('user-posts');
+        let texto='';
+
+        //console.log(db_posts.posts.length);
+        for(i=db_posts.posts.length-1;i>=0;i--)
+        {
+            if(db_posts.posts[i].text.length<250){
+            texto+=`
+                    <div id="row-post-${i}" class="row">
+                        <div class="col-12">
+                            <a id="${i+100}" class="link-to-post" onclick="prepareLink(this.id)" href="javascript:;"><img src="https://source.unsplash.com/random/1280x720" alt="tt"></a>
+                            <div class="desc">
+                                <h1><a class="link-to-post" id="${i+100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                </h1>
+                                <p class="new-text">${db_posts.posts[i].text}
+                                </p>
+                                </div>
+                        </div>
+                    </div>
+                    `
+            }
+            else{
+                texto+=`
+                    <div id="row-post-${i}" class="row">
+                        <div class="col-12">
+                            <a class="link-to-post" id="${i+100}" onclick="prepareLink(this.id)" href="javascript:;"><img src="https://source.unsplash.com/random/1280x720" alt="tt"></a>
+                            <div class="desc">
+                                <h1><a class="link-to-post" id="${i+100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                </h1>
+        
+                                <p class="new-text">${db_posts.posts[i].text.slice(0,250)}...
+                                </p>
+                                <p>
+                                <a class="link-to-post" id="${i+100}" onclick="prepareLink(this.id)" href="javascript:;">Leia mais...</a>
+                                </p>
+                                </div>
+                        </div>
+                    </div>
+                    `
+            }
+        }
+
+        postSpace.innerHTML=texto;
+    }
+    
+    db_posts = JSON.parse(localStorage.getItem('db_posts'));
+    
+    
+    if(db_posts){
+        loadPosts();
+    }
+
+    function prepareLink(value){
+        console.log(value);
+        let postTo = db_posts.posts[value-100];
+        localStorage.setItem('postTo',JSON.stringify(postTo));
+        window.location.href = 'newpage.html';
+    }
+
+    window.addEventListener('load', initPage);
+    $("#butaumPost").click(function() {
+            window.location.href = 'create-post.html';
+        });
+    
+    
+    
+    
+</script>
+</html>
