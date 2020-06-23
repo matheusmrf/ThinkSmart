@@ -19,12 +19,14 @@
     <div>
         <nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large"
             style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
-            <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32" id="close">CLOSE</a>
-            <a href="http://127.0.0.1:5500/login.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">LOGIN/CADASTRO</a>
-            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">SOBRE NÓS</a>
-            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTATO</a>
+            <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32" id="close">FECHAR</a>
+            <p class="w3-bar-item w3-center w3-padding-16 logged-in">Olá <span class="logged-in" id="nomeUsuario-m"></span>, seja bem-vindo!</p>
+            <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 logged-out">LOGIN/CRIAR CONTA</a>
+            <a id="btn_logout-m" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 logged-in">EFETUAR LOGOUT</a>
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">SOBRE NÓS</a>
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTATO</a>
             
-            <a href="http://127.0.0.1:5500/create-post.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CRIAR POST</a>
+            <a href="create-post.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CRIAR POST</a>
         </nav>
     </div>
 
@@ -155,9 +157,11 @@
 
     // Associa a função de logout ao botão
     document.getElementById('btn_logout').addEventListener('click', logoutUser);
+    document.getElementById('btn_logout-m').addEventListener('click', logoutUser);
 
     // Informa o nome do usuário logado
     document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+    document.getElementById('nomeUsuario-m').innerHTML = usuarioCorrente.nome;
 
     }
 

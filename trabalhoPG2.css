@@ -1,413 +1,349 @@
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
 
-*{
-    background-color: #4c96d7;
-    margin: 0px;
-    word-wrap: break-word;
+* {
+  background-color: #4c96d7;
+  margin: 0px;
+  word-wrap: break-word;
 }
-.header{
-    background-color: white;
-    width: 100%;
-    margin: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between !important;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    align-items: center;
-    
+.header {
+  background-color: white;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
 }
-.header a, .header nav, .header img, .header ul, .header .search, .header .input-container{
-    background-color: white;
-    
+.header a,
+.header nav,
+.header img,
+.header ul,
+.header .search,
+.header .input-container {
+  background-color: white;
 }
-.header .input-container{
-    
-    
-    text-align: center;
-    border: 2px solid;
-    border-color: #4c96d7;
-    border-radius: 10px;
-    padding: 5px;
-    
-    display: flex;
-    width: 40%;
-    max-width: 40%;
-    
+.header .input-container {
+  text-align: center;
+  border: 2px solid;
+  border-color: #4c96d7;
+  border-radius: 10px;
+  padding: 5px;
 
-
-   
-   
-    
+  display: flex;
+  width: 40%;
+  max-width: 40%;
 }
-.header .input-field{
-    background-color: white;
-    border-radius: 5px;
-    border: none;
-    width: 100%;
-    padding-left: 5px;
-    
-   
-    
+.header .input-field {
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  padding-left: 5px;
 }
-.header i{
-    background-color: white;
-    padding-left: 2px;
-    padding: 1px;
-    display: block;
-    margin: auto;
-    
+.header i {
+  background-color: white;
+  padding-left: 2px;
+  padding: 1px;
+  display: block;
+  margin: auto;
 }
 
+.header img {
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
+  max-width: 75%;
+  padding-left: 10px;
 
-.header img{
-    border-radius: 10px;
-    height: auto;
-    width: 100%;
-    max-width: 75%;
-    padding-left: 10px;
-   
-    display: block;
-    
-}
-.header a{
-    text-decoration: none;
+  display: block;
 }
 .header a {
-    color: black;
-    text-decoration: none;
+  text-decoration: none;
+}
+.header a {
+  color: black;
+  text-decoration: none;
 }
 
-.header a:hover 
-{
-     color:#4c96d7; 
-     text-decoration:none; 
-     cursor:pointer;  
+.header a:hover {
+  color: #4c96d7;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.header ul{
-   align-items: center;
+.header ul {
+  align-items: center;
   margin-right: 20px !important;
-  
-   
-   
 }
 
-
-.header ul li { display: inline;
-    display: inline;
+.header ul li {
+  display: inline;
+  display: inline;
   list-style: none;
   background-color: white;
   padding: 10px;
   border: 2px solid #000;
   border-radius: 10px;
   border-color: #4c96d7;
-    
-    
-    
 }
-#MenuM{
-  
-    font-size: 200%;
-    color: #4c96d7;
-    display: none;
-    visibility: hidden;
-      
-    }
-    #mySidebar a{
-      background-color: #4c96d7;
-      opacity: 100%;
-      
-    }
-    #mySidebar a:hover{
-      
-      text-decoration: none;
-      
-    }
-    #mySidebar #close {
-      background-color: red;
-     
-      
-    }
-    #mySidebar{
-     background-color: #4c96d7 !important;
-    }
-
-    /*---------------- Corpo -----------------------*/
-body{
-    min-height: 100%;
+#MenuM {
+  font-size: 200%;
+  color: #4c96d7;
+  display: none;
+  visibility: hidden;
 }
-.tudo{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 2rem;
+#mySidebar a {
+  background-color: #4c96d7;
+  opacity: 100%;
 }
-#Menu{
-    float: right;
-     margin-left: 0px;
-     background-color: white;
-     
-     border-radius: 10px;
-     
-     
-    
- }
- #butaum{
-    
-    background-color: white;
-    color: #4c96d7;
-    border: 1px solid white;
-    font-weight: bolder;
-    
-    
-    padding: 20px;
-    padding-right: 40px;
-    padding-left: 40px;
-    
-     
- }
- #butaum:hover{
-     background-color: rgb(216, 215, 215);
-     border: 1px solid rgb(216, 215, 215);
- }
- 
-#princ{
-   
-    background-color: white;
-   
+#mySidebar a:hover {
+  text-decoration: none;
 }
-.col-8 img{
-    width: 100%;
-    
-   
-    height: auto;
-    
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    
+#mySidebar #close {
+  background-color: red;
 }
-.col-8 h1{
-    font-size: 2rem;
-    
-    font-weight: bolder;
-    text-align: center;
-    padding-bottom: 20px;
-    background-color: white;
-}
-.col-8  .SubH1{
-    text-align: center;
-    font-weight: normal;
-    background-color: white;
-    font-size: 0.8rem;
-    color: grey;
-    
-}
-.col-8 p{
-    padding: 10px;
-    background-color: white;
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: justify;
-    
-}
-.col-4 img{
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    
-   
-    
-    display: block;
-    border: 2px solid rgb(190, 190, 190);
-    
-    
-}
-#imgsx{
-    display: inline-flex;
-    margin: auto !important;
-    
-   
-    padding: auto !important;
-
-  
-    
+#mySidebar {
+  background-color: #4c96d7 !important;
 }
 
-#princ2{
-    background-color: rgb(233, 233, 233);
-    width: 100%;
-    max-width: 100%;
-    padding: 0px;
-   
-    
-    }
-.col-10{
-    background-color: white;
-    
+/*---------------- Corpo -----------------------*/
+body {
+  min-height: 100%;
+}
+.tudo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 2rem;
+}
+#Menu {
+  float: right;
+  margin-left: 0px;
+  background-color: white;
+
+  border-radius: 10px;
+}
+#butaum {
+  background-color: white;
+  color: #4c96d7;
+  border: 1px solid white;
+  font-weight: bolder;
+
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+#butaum:hover {
+  background-color: rgb(216, 215, 215);
+  border: 1px solid rgb(216, 215, 215);
 }
 
-.freebirdFormviewerViewFormContentWrapper{
-    background-color: white;
-     margin: 0px;
-     padding: 0px;
-    
+#princ {
+  background-color: white;
+}
+.col-8 img {
+  width: 100%;
 
-     
-}
-.freebirdFormviewerViewCenteredContent{
-background-color: white;
-margin-top: 10px;
+  height: auto;
 
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
-.freebirdFormviewerViewFormContent{
-background-color: white;
-margin: 0px;
-padding: 0px;
+.col-8 h1 {
+  font-size: 2rem;
+
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: white;
 }
-.freebirdFormviewerViewNoPadding{
-    background-color: white;
-    padding: 20px;
+.col-8 .SubH1 {
+  text-align: center;
+  font-weight: normal;
+  background-color: white;
+  font-size: 0.8rem;
+  color: grey;
 }
-.freebirdFormviewerViewHeaderTitleRow{
-    background-color: white;
+.col-8 p {
+  padding: 10px;
+  background-color: white;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
 }
-.freebirdFormviewerViewHeaderTitle{
-    background-color: white;
+.col-4 img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+
+  display: block;
+  border: 2px solid rgb(190, 190, 190);
 }
-.freebirdFormviewerViewHeaderRequiredLegend{
-    background-color: white;
-    
-}
-.freebirdFormviewerViewItemList{
-    background-color: white;
-    
-}
-.freebirdFormviewerViewNumberedItemContainer{
-    background-color: white;
-}
-.freebirdFormviewerViewItemsItemItemHeader{
-    background-color: white;
-}
-.freebirdFormviewerViewItemsItemItemTitle{
-    background-color: white;
-}
-.freebirdFormviewerViewItemsItemRequiredAsterisk{
-    background-color: white;
-}
-.appsMaterialWizToggleRadiogroupGroupContainer{
-    background-color: white;
-}
-.freebirdMaterialScalecontentContainer{
-    background-color: white;
-}
-.freebirdMaterialScalecontentColumn{
-    background-color: white;
-}
-.freebirdMaterialScalecontentRangeLabelPlaceholder{
-    background-color: white;
-}
-.freebirdMaterialScalecontentRangeLabelContainer{
-    background-color: white;
-}
-.freebirdMaterialScalecontentRangeLabel{
-    background-color: white;
-}
-.freebirdMaterialScalecontentLabel{
-    background-color: white;
-}
-.appsMaterialWizToggleRadiogroupRadioButtonContainer{
-    background-color: white;
-}
-.appsMaterialWizToggleRadiogroupOnRadio{
-    background-color: white;
-}
-.freebirdFormviewerViewNavigationButtonsAndProgress{
-    background-color: white;
-}
-.freebirdFormviewerViewNavigationButtons{
-    background-color: white;
-}
-.freebirdFormviewerViewFooterDisclaimer{
-display: none;
-}
-.freebirdFormviewerViewFooterEmbeddedBackground{
-    display: none;
-}
-.freebirdFormviewerViewItemsItemErrorMessage{
-    background-color: white;
-}
-.freebirdMaterialIconIconImage{
-    background-color: white;
+#imgsx {
+  display: inline-flex;
+  margin: auto !important;
+
+  padding: auto !important;
 }
 
-    
-    
-    
-
-
-
-.logged-in{
-    background-color: white;
+#princ2 {
+  background-color: rgb(233, 233, 233);
+  width: 100%;
+  max-width: 100%;
+  padding: 0px;
+}
+.col-10 {
+  background-color: white;
 }
 
+.freebirdFormviewerViewFormContentWrapper {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+}
+.freebirdFormviewerViewCenteredContent {
+  background-color: white;
+  margin-top: 10px;
+}
+.freebirdFormviewerViewFormContent {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+}
+.freebirdFormviewerViewNoPadding {
+  background-color: white;
+  padding: 20px;
+}
+.freebirdFormviewerViewHeaderTitleRow {
+  background-color: white;
+}
+.freebirdFormviewerViewHeaderTitle {
+  background-color: white;
+}
+.freebirdFormviewerViewHeaderRequiredLegend {
+  background-color: white;
+}
+.freebirdFormviewerViewItemList {
+  background-color: white;
+}
+.freebirdFormviewerViewNumberedItemContainer {
+  background-color: white;
+}
+.freebirdFormviewerViewItemsItemItemHeader {
+  background-color: white;
+}
+.freebirdFormviewerViewItemsItemItemTitle {
+  background-color: white;
+}
+.freebirdFormviewerViewItemsItemRequiredAsterisk {
+  background-color: white;
+}
+.appsMaterialWizToggleRadiogroupGroupContainer {
+  background-color: white;
+}
+.freebirdMaterialScalecontentContainer {
+  background-color: white;
+}
+.freebirdMaterialScalecontentColumn {
+  background-color: white;
+}
+.freebirdMaterialScalecontentRangeLabelPlaceholder {
+  background-color: white;
+}
+.freebirdMaterialScalecontentRangeLabelContainer {
+  background-color: white;
+}
+.freebirdMaterialScalecontentRangeLabel {
+  background-color: white;
+}
+.freebirdMaterialScalecontentLabel {
+  background-color: white;
+}
+.appsMaterialWizToggleRadiogroupRadioButtonContainer {
+  background-color: white;
+}
+.appsMaterialWizToggleRadiogroupOnRadio {
+  background-color: white;
+}
+.freebirdFormviewerViewNavigationButtonsAndProgress {
+  background-color: white;
+}
+.freebirdFormviewerViewNavigationButtons {
+  background-color: white;
+}
+.freebirdFormviewerViewFooterDisclaimer {
+  display: none;
+}
+.freebirdFormviewerViewFooterEmbeddedBackground {
+  display: none;
+}
+.freebirdFormviewerViewItemsItemErrorMessage {
+  background-color: white;
+}
+.freebirdMaterialIconIconImage {
+  background-color: white;
+}
 
-.pezin{
-    width: 100%;
-   
-    
-    margin: 0px;
-    clear: both;
-   position: relative;
-   margin-top: -2rem;
-   height: 3rem;
-    
-}
-.pezin p,.pezin, .pezin a{
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    background-color: white;
-    
-  
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 0.5rem;
-    justify-content: space-between;
-    align-items: center;
-}
-.pezin a{
-    font-style: italic;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    margin-right: 10px;
-}
-.pezin p{
-    padding: 5px;
-    font-size: 0.5rem;
+.logged-in {
+  background-color: white;
 }
 
-form{
-    padding:20px;
-    text-align: center;
+.pezin {
+  width: 100%;
+
+  margin: 0px;
+  clear: both;
+  position: relative;
+  margin-top: -2rem;
+  height: 3rem;
 }
-form p{
-    font-size: larger;
+.pezin p,
+.pezin,
+.pezin a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.pezin a {
+  font-style: italic;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+.pezin p {
+  padding: 5px;
+  font-size: 0.5rem;
 }
 
-.styleForm p{
-    font-weight: bold;
+form {
+  padding: 20px;
+  text-align: center;
 }
-.styleNota{
-    text-align: left;
+form p {
+  font-size: larger;
 }
 
-.styleForm{
-    border-style:solid;
-    
+.styleForm p {
+  font-weight: bold;
+}
+.styleNota {
+  text-align: left;
+}
+
+.styleForm {
+  border-style: solid;
 }
 
 /*$grid-breakpoints: (
@@ -423,57 +359,55 @@ $container-max-widths: (
   lg: 960px
 );*/
 
-
 @media only screen and (max-width: 1200px) {
+  .header .input-container {
+    visibility: hidden;
+    display: none;
+  }
+  .header {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  .header img {
+    padding: 0px;
+    max-width: 75%;
+    max-height: 75%;
+  }
+  .header ul {
+    display: none;
+    visibility: hidden;
+  }
+  #MenuM {
+    display: flex;
+    visibility: visible;
+  }
 
-    .header .input-container{
-      visibility: hidden;
-      display: none;
-    }
-    .header{
-     display: inline-flex;
-     justify-content: space-between;
-    }
-    .header img{
-      
-      padding: 0px;
-      max-width: 75%;
-      max-height: 75%;
-      
-    }
-    .header ul{
-      display: none;
-  visibility: hidden;
-    }
-    #MenuM{
-      display: flex;
-  visibility: visible;
-    }
-   
-    [class*="col-1"] {
-      visibility: hidden !important;
-      display: none !important;
-    }
-    [class*="col-2 colBtn"] {
-      visibility: hidden !important;
-      display: none !important;
-    }
-    
-    [class*="col-8"] {
+  [class*="col-1"] {
+    visibility: hidden !important;
+    display: none !important;
+  }
+  [class*="col-2 colBtn"] {
+    visibility: hidden !important;
+    display: none !important;
+  }
+
+  [class*="col-8"] {
     max-width: 100% !important;
     width: 100% !important;
-    
+
     margin: auto;
-    }
-   
-    [id="imgsx"] {
-        max-width: 100% !important;
-        width: 100% !important;
-        justify-content: center !important;
-        display: flex;
-       }
-    [class*="container ALL"]{
-      width: 100%;
-    }
-  
   }
+
+  [id="imgsx"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    justify-content: center !important;
+    display: flex;
+  }
+  [class*="container ALL"] {
+    width: 100%;
+  }
+  .logged-in{
+    background-color: #4c96d7;
+  }
+}

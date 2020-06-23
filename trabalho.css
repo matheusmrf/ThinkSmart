@@ -88,16 +88,14 @@ html {
   border-radius: 10px;
   border-color: #4c96d7;
 }
-#MenuM{
-  
-font-size: 200%;
-color: #4c96d7;
-display: none;
-visibility: hidden;
-  
+#MenuM {
+  font-size: 200%;
+  color: #4c96d7;
+  display: none;
+  visibility: hidden;
 }
 
-.MenuMFiltro{
+.MenuMFiltro {
   background-color: black !important;
   padding: 20px;
   font-size: 100%;
@@ -107,31 +105,22 @@ visibility: hidden;
   text-align: center;
   color: white !important;
 }
-#mySidebar a{
+#mySidebar a {
   background-color: #4c96d7;
   opacity: 100%;
   font-size: 85%;
-  
 }
-#mySidebar a:hover{
-  
+#mySidebar a:hover {
   text-decoration: none;
-  
 }
 #mySidebar #close {
   background-color: red;
- 
-  
 }
-#mySidebar{
- background-color: #4c96d7 !important;
+#mySidebar {
+  background-color: #4c96d7 !important;
 }
-
 
 /*------------------------ corpo ------------------------*/
-
-
-
 
 body {
   min-height: 100%;
@@ -181,8 +170,8 @@ body {
   padding: 20px;
 }
 
-#user-posts a{
-    word-wrap: break-word;
+#user-posts a {
+  word-wrap: break-word;
 }
 
 .desc {
@@ -194,8 +183,8 @@ body {
   background-color: white;
   text-align: justify;
 }
-.new-text{
-    word-wrap: break-word ;
+.new-text {
+  word-wrap: break-word;
 }
 .col-8 p {
   font-size: 1rem;
@@ -236,7 +225,6 @@ body {
 .logged-in {
   background-color: white;
 }
-
 
 /*------------------ pezin -------------------*/
 
@@ -286,31 +274,28 @@ $container-max-widths: (
 );*/
 
 @media only screen and (max-width: 1200px) {
-
-  .header .input-container{
+  .header .input-container {
     visibility: hidden;
     display: none;
   }
-  .header{
-   display: inline-flex;
-   justify-content: space-between;
+  .header {
+    display: inline-flex;
+    justify-content: space-between;
   }
-  .header img{
-    
+  .header img {
     padding: 0px;
     max-width: 75%;
     max-height: 75%;
-    
   }
-  .header ul{
+  .header ul {
     display: none;
-visibility: hidden;
+    visibility: hidden;
   }
-  #MenuM{
+  #MenuM {
     display: flex;
-visibility: visible;
+    visibility: visible;
   }
- 
+
   [class*="col-2 menuBtn"] {
     visibility: hidden !important;
     display: none !important;
@@ -319,17 +304,16 @@ visibility: visible;
     visibility: hidden !important;
     display: none !important;
   }
-  
+
   [class*="col-8"] {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: auto;
-  
-  
- 
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: auto;
   }
-  [class*="container ALL"]{
+  [class*="container ALL"] {
     width: 100%;
   }
-
+  .logged-in{
+    background-color: #4c96d7;
+  }
 }
