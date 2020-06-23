@@ -249,3 +249,13 @@ $container-max-widths: {
   md: 720px,
   lg: 960px
 };*/
+
+
+@media only screen and (max-width: 1200px) {
+ 
+  [id="Menu"]{
+    visibility: hidden;
+    display: none;
+  }
+
+}

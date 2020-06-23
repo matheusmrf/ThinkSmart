@@ -9,15 +9,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 
 <body>
+
+
+    <div>
+        <nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large"
+            style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+            <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32" id="close">CLOSE</a>
+            <a href="http://127.0.0.1:5500/login.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">LOGIN/CADASTRO</a>
+            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">SOBRE NÓS</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTATO</a>
+            
+            <a href="http://127.0.0.1:5500/create-post.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CRIAR POST</a>
+        </nav>
+    </div>
+
+
     <header class="header">
         <a href="trabalho.html"><img src="imgs/ThinkSmartL2.png" alt="logotrabalho"></a>
         <div class="input-container">
             <i class="fa fa-search"></i>
             <input class="input-field" type="text" placeholder="Search..." name="usrnm">
+
+            
         </div>
+       
+    
         </pesquisa>
         <nav>
             <ul class="top">
@@ -37,7 +58,17 @@
 
             </ul>
         </nav>
+        <nav>
+            <a href="javascript:void(0)" class="w3-right w3-button w3-white" id="MenuM" onclick="w3_open()">☰</a>
+            
+           
+        </nav>
     </header>
+
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <div class="w3-main w3-content" style="max-width:400px;margin-top:0" id="MenuL"></div>
+
     <div class="tudo">
         <div class="container">
             <div id="full-post">
@@ -86,7 +117,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
 </body>
 <script src="login.js"></script>
+
 <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+    
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+</script>
+
+<script>
+
     let post = JSON.parse(localStorage.getItem('postTo'));
     console.log(post);
     

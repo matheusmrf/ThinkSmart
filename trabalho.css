@@ -77,6 +77,7 @@ html {
 .header ul {
   align-items: center;
   padding-right: 10px;
+  margin-right: -50px;
 }
 .header ul li {
   display: inline;
@@ -87,9 +88,55 @@ html {
   border-radius: 10px;
   border-color: #4c96d7;
 }
+#MenuM{
+  
+font-size: 200%;
+color: #4c96d7;
+display: none;
+visibility: hidden;
+  
+}
+
+.MenuMFiltro{
+  background-color: black !important;
+  padding: 20px;
+  font-size: 100%;
+  font-weight: bold;
+  margin: auto !important;
+  justify-content: center !important;
+  text-align: center;
+  color: white !important;
+}
+#mySidebar a{
+  background-color: #4c96d7;
+  opacity: 100%;
+  font-size: 85%;
+  
+}
+#mySidebar a:hover{
+  
+  text-decoration: none;
+  
+}
+#mySidebar #close {
+  background-color: red;
+ 
+  
+}
+#mySidebar{
+ background-color: #4c96d7 !important;
+}
+
+
+/*------------------------ corpo ------------------------*/
+
+
+
+
 body {
   min-height: 100%;
 }
+/*------------------- Menu Lateral Categorias -----------------*/
 #Menu {
   float: right;
   margin-left: 0px;
@@ -128,6 +175,7 @@ body {
   background-color: rgb(216, 215, 215);
   border: 1px solid rgb(216, 215, 215);
 }
+/*------------------------- Posts ------------------------*/
 
 .row {
   padding: 20px;
@@ -189,6 +237,9 @@ body {
   background-color: white;
 }
 
+
+/*------------------ pezin -------------------*/
+
 .pezin {
   position: fixed;
   bottom: 0;
@@ -235,14 +286,50 @@ $container-max-widths: (
 );*/
 
 @media only screen and (max-width: 1200px) {
-  .header .input-container {
-    display: none;
-  }
-  .menuBtn {
-    display: none;
-  }
 
-  [class*="col-"] {
+  .header .input-container{
+    visibility: hidden;
+    display: none;
+  }
+  .header{
+   display: inline-flex;
+   justify-content: space-between;
+  }
+  .header img{
+    
+    padding: 0px;
+    max-width: 75%;
+    max-height: 75%;
+    
+  }
+  .header ul{
+    display: none;
+visibility: hidden;
+  }
+  #MenuM{
+    display: flex;
+visibility: visible;
+  }
+ 
+  [class*="col-2 menuBtn"] {
+    visibility: hidden !important;
+    display: none !important;
+  }
+  [class*="col-2 colBtn"] {
+    visibility: hidden !important;
+    display: none !important;
+  }
+  
+  [class*="col-8"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: auto;
+  
+  
+ 
+  }
+  [class*="container ALL"]{
     width: 100%;
   }
+
 }

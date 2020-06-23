@@ -13,7 +13,7 @@ html{
     margin: 0px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between !important;
     padding-top: 1rem;
     padding-bottom: 1rem;
     align-items: center;
@@ -89,8 +89,7 @@ html{
 
 .header ul{
    align-items: center;
-   padding-right: 10px;
-   margin: 20px;
+  margin-right: 20px !important;
   
    
    
@@ -98,19 +97,45 @@ html{
 
 
 .header ul li { display: inline;
-    list-style: none;
-    
-    background-color: white;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    border-color: #4c96d7;
-    margin: 5px;
-    
+    display: inline;
+  list-style: none;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  border-color: #4c96d7;
     
     
     
 }
+#MenuM{
+  
+    font-size: 200%;
+    color: #4c96d7;
+    display: none;
+    visibility: hidden;
+      
+    }
+    #mySidebar a{
+      background-color: #4c96d7;
+      opacity: 100%;
+      
+    }
+    #mySidebar a:hover{
+      
+      text-decoration: none;
+      
+    }
+    #mySidebar #close {
+      background-color: red;
+     
+      
+    }
+    #mySidebar{
+     background-color: #4c96d7 !important;
+    }
+
+    /*---------------- Corpo -----------------------*/
 body{
     min-height: 100%;
 }
@@ -202,14 +227,25 @@ body{
     
     
 }
-#princ2{
-    background-color: rgb(233, 233, 233);
-    padding: 20px;
-    display: block;
-    
+#imgsx{
+    display: inline-flex;
+    margin: auto !important;
     
    
+    padding: auto !important;
+
+  
+    
 }
+
+#princ2{
+    background-color: rgb(233, 233, 233);
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+   
+    
+    }
 .col-10{
     background-color: white;
     
@@ -386,3 +422,58 @@ $container-max-widths: (
   md: 720px,
   lg: 960px
 );*/
+
+
+@media only screen and (max-width: 1200px) {
+
+    .header .input-container{
+      visibility: hidden;
+      display: none;
+    }
+    .header{
+     display: inline-flex;
+     justify-content: space-between;
+    }
+    .header img{
+      
+      padding: 0px;
+      max-width: 75%;
+      max-height: 75%;
+      
+    }
+    .header ul{
+      display: none;
+  visibility: hidden;
+    }
+    #MenuM{
+      display: flex;
+  visibility: visible;
+    }
+   
+    [class*="col-1"] {
+      visibility: hidden !important;
+      display: none !important;
+    }
+    [class*="col-2 colBtn"] {
+      visibility: hidden !important;
+      display: none !important;
+    }
+    
+    [class*="col-8"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    
+    margin: auto;
+    }
+   
+    [id="imgsx"] {
+        max-width: 100% !important;
+        width: 100% !important;
+        justify-content: center !important;
+        display: flex;
+       }
+    [class*="container ALL"]{
+      width: 100%;
+    }
+  
+  }
