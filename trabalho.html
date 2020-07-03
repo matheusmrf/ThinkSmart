@@ -28,10 +28,12 @@
         <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTATO</a>
         <a href="create-post.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CRIAR POST</a>
         <h1  class="MenuMFiltro">FILTROS</h1>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">TREND</a>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">TECH</a>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">UTILITY</a>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ECO</a>
+        <button  onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 btnFilter" id="TREND-m" value="Trend">TREND</button>
+        <button  onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 btnFilter" id="TECH-m" value="Tech">TECH</button>
+        <button  onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 btnFilter" id="UTILITY-m" value="Utility">UTILITY</button>
+        <button  onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 btnFilter" id="ECO-m" value="ECO">ECO</button>
+        <button  onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 btnFilter" id="OTHER-m" value="Other">OTHER</button>
+        <button  onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16 btnFilterOut" id="filterOut-m" value="none" style="background-color: red !important;color:white !important">Limpar Filtros</button>
     </nav>
 </div>
 
@@ -92,10 +94,12 @@
                     <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown"
                         id="Menu">
 
-                        <button type="button" class="btn btn-secondary" id="butaum">Trend</button>
-                        <button type="button" class="btn btn-secondary" id="butaum">Tech</button>
-                        <button type="button" class="btn btn-secondary" id="butaum">Utility</button>
-                        <button type="button" class="btn btn-secondary" id="butaum">Eco</button>
+                        <button type="button" class="btn btn-secondary butaum btnFilter" id="TREND" value="Trend">Trend</button>
+                        <button type="button" class="btn btn-secondary butaum btnFilter" id="TECH" value="Tech">Tech</button>
+                        <button type="button" class="btn btn-secondary butaum btnFilter" id="UTILITY" value="Utility">Utility</button>
+                        <button type="button" class="btn btn-secondary butaum btnFilter" id="ECO" value="ECO">Eco</button>
+                        <button type="button" class="btn btn-secondary butaum btnFilter" id="OTHER" value="Other">Other</button>
+                        <button type="button" style="background-color: red !important;color:white !important" class="btn btn-secondary butaum btnFilterOut" id="filterOut" value="none">Limpar Filtro</button>
 
                     </div>
                 </div>
@@ -103,8 +107,13 @@
                     <div id="user-posts">
 
                     </div>
-                    <div class="row">
-                        <div class="col-12">
+                    <div class="row justify-content-center">
+                        <h1 style="background-color: #4c96d7">
+                            DESTAQUES:
+                        </h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-sm-12">
                             <a href="trabalhoPG2.html"><img src="imgs/TrabalhoB3.jpg" alt="tt"></a>
                             <div class="desc">
                                 <h1><a href="trabalhoPG2.html">Transformando lixo em qualidade</a><br>
@@ -121,8 +130,8 @@
 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-sm-12">
                             <a href="#"><img src="imgs/TrabalhoB2.jpg" alt="tt"></a>
                             <div class="desc">
                                 <h1><a href="#">Quando se precisa de uma luz na comemoração</a><br>
@@ -139,8 +148,8 @@
 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-sm-12">
                             <a href="#"><img src="imgs/TrabalhoB1.jpg" alt="tt"></a>
                             <div class="desc">
                                 <h1><a href="#">Praticidade um estilo de vida</a><br>
@@ -227,6 +236,30 @@
         $(".logged-out").hide();
     }
 
+    if(sessionStorage.getItem('filter')=='none')
+    {
+        document.getElementById("filterOut").style.display="none";
+    }
+
+
+    function filter(event) {
+        event.preventDefault();
+        let id = this.value;
+        sessionStorage.setItem('filter',`${id}`);
+        document.getElementById("filterOut").style.display="block";
+        document.getElementById("filterOut-m").style.display="block";
+        loadPosts();
+    }
+
+    function filterOut(event){
+        event.preventDefault();
+        let id = this.value;
+        sessionStorage.setItem('filter',`${id}`);
+        document.getElementById("filterOut").style.display="none";
+        document.getElementById("filterOut-m").style.display="none";
+        loadPosts();
+    }
+
     function initPage() {
 
         // Associa a função de logout ao botão
@@ -236,6 +269,23 @@
         // Informa o nome do usuário logado
         document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
         document.getElementById('nomeUsuario-m').innerHTML = usuarioCorrente.nome;
+
+        sessionStorage.setItem('filter','none');
+        document.getElementById("filterOut").style.display="none";
+        document.getElementById("filterOut-m").style.display="none";
+
+        document.getElementById('TREND').addEventListener('click', filter);
+        document.getElementById('TECH').addEventListener('click', filter);
+        document.getElementById('UTILITY').addEventListener('click', filter);
+        document.getElementById('ECO').addEventListener('click', filter);
+        document.getElementById('OTHER').addEventListener('click', filter);
+        document.getElementById('TREND-m').addEventListener('click', filter);
+        document.getElementById('TECH-m').addEventListener('click', filter);
+        document.getElementById('UTILITY-m').addEventListener('click', filter);
+        document.getElementById('ECO-m').addEventListener('click', filter);
+        document.getElementById('OTHER-m').addEventListener('click', filter);
+        document.getElementById('filterOut').addEventListener('click', filterOut);
+        document.getElementById('filterOut-m').addEventListener('click', filterOut);
     }
 
 
@@ -243,50 +293,238 @@
     function loadPosts() {
 
         let db_posts = JSON.parse(localStorage.getItem('db_posts'));
+        let db_notas = JSON.parse(localStorage.getItem('db_notas'));
         let postSpace = document.getElementById('user-posts');
+        let hasNotaFinal,j;
+        let notaTotal;
         let texto = '';
+        let filter = sessionStorage.getItem('filter');
+        if(db_posts){
+            if(filter=='none'){
+                for (i = db_posts.posts.length - 1; i >= 0; i--) {
+                    hasNotaFinal=0;
+                    if(db_notas!=null){
+                        for(j=0;j<db_notas.notas.length;j++)
+                        {
+                            //console.log(`${j}-${hasNotaFinal}`);
+                            //console.log(`--${db_posts.posts[i].id}--${db_notas.notas[j].id}`);
+                            if(db_notas.notas[j].id==db_posts.posts[i].id)
+                            {
+                                notaTotal = db_notas.notas[j].notaTotal;
+                                hasNotaFinal=1;
+                            }
+                            //console.log(`${j}-${hasNotaFinal}`);
+                        }
+                    }
 
-        //console.log(db_posts.posts.length);
-        for (i = db_posts.posts.length - 1; i >= 0; i--) {
-            if (db_posts.posts[i].text.length < 250) {
-                texto += `
-                    <div id="row-post-${i}" class="row">
-                        <div class="col-12">
-                            <a id="${i + 100}" class="link-to-post" onclick="prepareLink(this.id)" href="javascript:;"><img src="https://source.unsplash.com/random/1280x720" alt="tt"></a>
-                            <div class="desc">
-                                <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
-                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
-                                </h1>
-                                <p class="new-text">${db_posts.posts[i].text}
-                                </p>
+                    if(hasNotaFinal==1){
+                        if (db_posts.posts[i].text.length < 250) {
+                            texto += `
+                                <div id="row-post-${i}" class="row justify-content-center">
+                                    <div class="col-lg-10 col-sm-12">
+                                        <a id="${i + 100}" class="link-to-post" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                        <div class="desc">
+                                            <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                            </h1>
+                                            <p class="new-text">${db_posts.posts[i].text}
+                                            </p>
+                                        </div>
+                                        <div class="desc">
+                                            <p>
+                                                Nota: ${notaTotal}/10
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                        </div>
-                    </div>
-                    `
+                                `
+                        }
+                        else {
+                            texto += `
+                                <div id="row-post-${i}" class="row justify-content-center">
+                                    <div class="col-lg-10 col-sm-12">
+                                        <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                        <div class="desc">
+                                            <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                            </h1>
+                    
+                                            <p class="new-text">${db_posts.posts[i].text.slice(0, 250)}...
+                                            </p>
+                                            <p>
+                                            <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">Leia mais...</a>
+                                            </p>
+                                            </div>
+                                            <div class="desc">
+                                            <p>
+                                                Nota: ${notaTotal}/10
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                `
+                        }
+                    }
+                    else{
+                        if (db_posts.posts[i].text.length < 250) {
+                            texto += `
+                                <div id="row-post-${i}" class="row justify-content-center">
+                                    <div class="col-lg-10 col-sm-12">
+                                        <a id="${i + 100}" class="link-to-post" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                        <div class="desc">
+                                            <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                            </h1>
+                                            <p class="new-text">${db_posts.posts[i].text}
+                                            </p>
+                                            </div>
+                                    </div>
+                                </div>
+                                `
+                        }
+                        else {
+                            texto += `
+                                <div id="row-post-${i}" class="row justify-content-center">
+                                    <div class="col-lg-10 col-sm-12">
+                                        <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                        <div class="desc">
+                                            <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                            </h1>
+                    
+                                            <p class="new-text">${db_posts.posts[i].text.slice(0, 250)}...
+                                            </p>
+                                            <p>
+                                            <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">Leia mais...</a>
+                                            </p>
+                                            </div>
+                                    </div>
+                                </div>
+                                `
+                        }
+                    }
+                }
+
+                postSpace.innerHTML = texto;
             }
-            else {
-                texto += `
-                    <div id="row-post-${i}" class="row">
-                        <div class="col-12">
-                            <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;"><img src="https://source.unsplash.com/random/1280x720" alt="tt"></a>
-                            <div class="desc">
-                                <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
-                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
-                                </h1>
-        
-                                <p class="new-text">${db_posts.posts[i].text.slice(0, 250)}...
-                                </p>
-                                <p>
-                                <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">Leia mais...</a>
-                                </p>
-                                </div>
-                        </div>
-                    </div>
-                    `
+            else{
+                for (i = db_posts.posts.length - 1; i >= 0; i--) {
+                    if(db_posts.posts[i].tag==filter){
+                        hasNotaFinal=0;
+                        if(db_notas!=null){
+                            for(j=0;j<db_notas.notas.length;j++)
+                            {
+                                //console.log(`--${db_posts.posts[i].id},${db_notas.notas[j].id}`);
+                                if(db_notas.notas[j].id==db_posts.posts[i].id)
+                                {
+                                    notaTotal = db_notas.notas[j].notaTotal;
+                                    hasNotaFinal=1;
+                                }
+                            }
+                        }
+
+                        if(hasNotaFinal==1){
+                            if (db_posts.posts[i].text.length < 250) {
+                                texto += `
+                                    <div id="row-post-${i}" class="row justify-content-center">
+                                        <div class="col-lg-10 col-sm-12">
+                                            <a id="${i + 100}" class="link-to-post" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                            <div class="desc">
+                                                <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                                </h1>
+                                                <p class="new-text">${db_posts.posts[i].text}
+                                                </p>
+                                            </div>
+                                            <div class="desc">
+                                                <p>
+                                                    Nota: ${notaTotal}/10
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    `
+                            }
+                            else {
+                                texto += `
+                                    <div id="row-post-${i}" class="row justify-content-center">
+                                        <div class="col-lg-10 col-sm-12">
+                                            <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                            <div class="desc">
+                                                <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                                </h1>
+                        
+                                                <p class="new-text">${db_posts.posts[i].text.slice(0, 250)}...
+                                                </p>
+                                                <p>
+                                                <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">Leia mais...</a>
+                                                </p>
+                                                </div>
+                                                <div class="desc">
+                                                <p>
+                                                    Nota: ${notaTotal}/10
+                                                </p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    `
+                            }
+                        }
+                        else{
+                            if (db_posts.posts[i].text.length < 250) {
+                                texto += `
+                                    <div id="row-post-${i}" class="row justify-content-center">
+                                        <div class="col-lg-10 col-sm-12">
+                                            <a id="${i + 100}" class="link-to-post" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                            <div class="desc">
+                                                <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                                </h1>
+                                                <p class="new-text">${db_posts.posts[i].text}
+                                                </p>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    `
+                            }
+                            else {
+                                texto += `
+                                    <div id="row-post-${i}" class="row justify-content-center">
+                                        <div class="col-lg-10 col-sm-12">
+                                            <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;"><img src="imgs/placeholder.jpg" alt="tt"></a>
+                                            <div class="desc">
+                                                <h1><a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">${db_posts.posts[i].title}</a><br>
+                                                    <id class="SubH1">By <a href="#">${db_posts.posts[i].author}</a> - ${db_posts.posts[i].time} - <a href="#">${db_posts.posts[i].company}</a> - <a href="#">${db_posts.posts[i].tag}</a></id>
+                                                </h1>
+                        
+                                                <p class="new-text">${db_posts.posts[i].text.slice(0, 250)}...
+                                                </p>
+                                                <p>
+                                                <a class="link-to-post" id="${i + 100}" onclick="prepareLink(this.id)" href="javascript:;">Leia mais...</a>
+                                                </p>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    `
+                            }
+                        }
+                    }
+
+                    postSpace.innerHTML = texto;
+                }
             }
         }
-
-        postSpace.innerHTML = texto;
+        else{
+            texto = `<h1 style="background-color: #4c96d7;">Não há posts novos!</h1>`;
+            postSpace.innerHTML = texto;
+        }
+        if(texto=='')
+        {
+            texto = `<h1 style="background-color: #4c96d7;">Não há posts novos!</h1>`;
+            postSpace.innerHTML = texto;
+        }
     }
 
     db_posts = JSON.parse(localStorage.getItem('db_posts'));
@@ -294,6 +532,12 @@
 
     if (db_posts) {
         loadPosts();
+    }
+
+    else{
+        let postSpace = document.getElementById('user-posts');
+        let texto = `<h1 style="background-color: #4c96d7;">Não há posts novos!</h1>`;
+        postSpace.innerHTML = texto;
     }
 
     function prepareLink(value) {

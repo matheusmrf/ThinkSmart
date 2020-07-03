@@ -52,7 +52,7 @@ function writeText()
     for(i=0;i<10;i++)
     {
         texto+=`<input type="radio" id="notaApres${i+1}" name="notaApres" class="radios" value="${i+1}" required/>
-                <label for="notaApres${i+1}">${i+1}</label>`;
+                    <label for="notaApres${i+1}">${i+1}</label>`;
     }
     texto+= `</p>
     </div>
@@ -69,7 +69,7 @@ function writeText()
     for(i=0;i<10;i++)
     {
         texto += ` <input type="radio" id="notaInter${i+1}" name="notaInter" class="radios" value="${i+1}" required/>
-                   <label for="notaInter${i+1}">${i+1}</label>`;
+<label for="notaInter${i+1}">${i+1}</label>`;
     }
     texto += `</p>
     </div>
@@ -103,7 +103,7 @@ function writeText()
     for(i=0;i<10;i++)
     {
         texto += `<input type="radio" id="notaExec${i+1}" name="notaExec" class="radios" value="${i+1}" required/>
-                  <label for="notaExec${i+1}">${i+1}</label>`;
+                    <label for="notaExec${i+1}">${i+1}</label>`;
     }
     texto += `</p>
         </div>
@@ -111,6 +111,12 @@ function writeText()
         <p>
             Nota Média: <span id="notaExecMedia"></span> 
         </p>
+        </div>
+        <br>
+        <div class="styleNota">
+        <h1>
+            Nota Final: <span id="notaFinal"></span>/10
+        </h1>
         </div>
         <div class="styleBtn">
             <p>
@@ -134,11 +140,13 @@ function updateDOM(thisIndex)
     let notaFinalInter=document.getElementById("notaInterMedia");
     let notaFinalProp=document.getElementById("notaPropMedia");
     let notaFinalExec=document.getElementById("notaExecMedia");
+    let notaFinal=document.getElementById("notaFinal");
     notaFinalUtil.innerHTML = thisNota.objNotaUtil.media.toFixed(1);
     notaFinalApres.innerHTML = thisNota.objNotaApres.media.toFixed(1);
     notaFinalInter.innerHTML = thisNota.objNotaInter.media.toFixed(1);
     notaFinalProp.innerHTML = thisNota.objNotaProp.media.toFixed(1);
     notaFinalExec.innerHTML = thisNota.objNotaExec.media.toFixed(1);
+    notaFinal.innerHTML = thisNota.notaTotal;
 }
 
 
@@ -223,7 +231,9 @@ function submitNota(event)
         mediaExec=totalExec/clicksExec;
         objNotaExec = {"nota":notaExec,"total":totalExec,"clicks":clicksExec,"media":mediaExec};
 
-        let newNota = {"id":notaID,"objNotaUtil":objNotaUtil,"objNotaApres":objNotaApres,"objNotaInter":objNotaInter,"objNotaProp":objNotaProp,"objNotaExec":objNotaExec};
+        let notaTotal = ((objNotaUtil.media + objNotaApres.media + objNotaInter.media + objNotaProp.media + objNotaExec.media)/5.0).toFixed(1); 
+
+        let newNota = {"id":notaID,"objNotaUtil":objNotaUtil,"objNotaApres":objNotaApres,"objNotaInter":objNotaInter,"objNotaProp":objNotaProp,"objNotaExec":objNotaExec,"notaTotal":notaTotal};
         console.log(newNota);
         db_notas.notas[thisIndex]=newNota;
         localStorage.setItem('db_notas',JSON.stringify(db_notas));
@@ -254,8 +264,10 @@ function submitNota(event)
         clicksExec++;
         mediaExec=totalExec/clicksExec;
         objNotaExec = {"nota":notaExec,"total":totalExec,"clicks":clicksExec,"media":mediaExec};
+        
+        let notaTotal = ((objNotaUtil.media + objNotaApres.media + objNotaInter.media + objNotaProp.media + objNotaExec.media)/5.0).toFixed(1); 
 
-        let newNota = {"id":notaID,"objNotaUtil":objNotaUtil,"objNotaApres":objNotaApres,"objNotaInter":objNotaInter,"objNotaProp":objNotaProp,"objNotaExec":objNotaExec};
+        let newNota = {"id":notaID,"objNotaUtil":objNotaUtil,"objNotaApres":objNotaApres,"objNotaInter":objNotaInter,"objNotaProp":objNotaProp,"objNotaExec":objNotaExec,"notaTotal":notaTotal};
         console.log(newNota);
         db_notas.notas.push(newNota);
         localStorage.setItem('db_notas',JSON.stringify(db_notas));
@@ -280,6 +292,10 @@ onload = () => {
     if(hasNota)
     {
         updateDOM(thisIndex);
+    }
+    else
+    {
+        $(".styleNota").hide();
     }
 }
 

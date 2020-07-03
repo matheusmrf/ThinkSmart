@@ -138,18 +138,18 @@ body {
   background-color: white;
   border-radius: 10px;
 }
-#butaum {
-  background-color: white;
-  color: #4c96d7;
-  border: 1px solid white;
-  font-weight: bolder;
-  padding: 20px;
-  padding-right: 40px;
-  padding-left: 40px;
+.butaum {
+  background-color: white !important;
+  color: #4c96d7 !important;
+  border: 1px solid white !important;
+  font-weight: bolder !important;
+  padding: 20px !important;
+  padding-right: 40px !important;
+  padding-left: 40px !important;
 }
-#butaum:hover {
-  background-color: rgb(216, 215, 215);
-  border: 1px solid rgb(216, 215, 215);
+.butaum:hover {
+  background-color: rgb(216, 215, 215) !important;
+  border: 1px solid rgb(216, 215, 215) !important;
 }
 #butaumPost {
   background-color: white;
@@ -259,6 +259,7 @@ body {
   padding: 5px;
   font-size: 0.5rem;
 }
+
 
 /*$grid-breakpoints: (
   xs: 0,
